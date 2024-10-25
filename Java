@@ -1,0 +1,171 @@
+function ejercicio1(){
+  let mensaje="",nv=0;
+  mensaje = document.getElementById("mensaje").value
+  nv = document.getElementById("nv").value
+  const resp = document.getElementById("resp")
+  nv=parseInt(nv)
+  resp.value = "";
+  for (let i = 1; i <= nv; i++){
+    resp.value += mensaje + "\n"
+  }
+}
+function ejercicio2(){
+  let inicio = 0, final = 0, r = 0;
+  const tab = 7; // Número fijo
+  inicio = document.getElementById("inicio").value;
+  final = document.getElementById("final").value;
+  inicio = parseInt(inicio);
+  final = parseInt(final);
+  let resultado = document.getElementById("resp");
+  resultado.innerHTML = "";
+  while (inicio <= final) {
+    r = inicio % tab;
+    if (r === 0) {
+      resultado.innerHTML += `${inicio} es multiplo de ${tab}\n`
+      console.log(inicio + " es múltiplo de " + tab);
+    }
+    inicio = inicio + 1;
+  }
+}
+function ejercicio3(){
+  let num = document.getElementById("num").value;
+  let ln = document.getElementById("ln").value;
+  num = parseInt(num);
+  ln = parseInt(ln);
+  if (isNaN(num) || isNaN(ln) || num <= 0 || ln <= 0){
+    alert("Por favor, ingrese números válidos mayores a 0.");
+    return;
+  }
+  let resultado = document.getElementById("resp");
+  resultado.value = "";
+  for (let i = 1; i <= ln; i++){
+    if (i % num === 0){
+      resultado.value += `${i} es múltiplo de ${num}\n`
+      console.log(i + " es múltiplo de " + num);
+    }
+  }
+}
+function ejercicio4(){
+  let inicio = document.getElementById("inicio").value;
+  let final = document.getElementById("final").value;
+  let msg = "";
+  let resp = document.getElementById("obs");
+  inicio = parseInt(inicio);
+  final = parseInt(final);
+  if (isNaN(inicio) || isNaN(final)){
+    alert("Por favor, ingrese números válidos.");
+    return;
+  }
+  while (inicio <= final){
+    if (inicio > 0) {
+      msg = msg + `${inicio}\n`;
+    }
+    inicio = inicio + 1
+  }
+  resp.innerHTML = msg
+}
+function ejercicio5(){
+  let inicio = 0, final = 0, r = 0;
+  const tab = 2; // Número fijo
+  inicio = document.getElementById("inicio").value;
+  final = document.getElementById("final").value;
+  inicio = parseInt(inicio);
+  final = parseInt(final);
+  let resultado = document.getElementById("resp");
+  resultado.innerHTML = "";
+  while (inicio <= final) {
+    r = inicio % tab;
+    if (r === 0) {
+      resultado.innerHTML += `${inicio} es par \n`
+      console.log(inicio + " es par ");
+    }
+    inicio = inicio + 1;
+  }
+}
+function ejercicio6(){
+  let num = 0, ln = 0;
+  num = document.getElementById("num").value;
+  ln = document.getElementById("ln").value;
+  num = parseInt(num);
+  ln = parseInt(ln);
+  let resultado = document.getElementById("resp");
+  resultado.value = "";
+  for (let i = 1; i <= ln; i++){
+    if (num % i === 0){
+      resultado.value += `${i} divisor de ${num}\n`
+      console.log(i + " divisor de " + num);
+    }
+  }
+}
+function ejercicio7(){
+  let inicio = 1, r = 0;
+  const final = 12;
+  const tab = 10;
+  inicio = document.getElementById("inicio").value;
+  inicio = parseInt(inicio);
+  let resultado = document.getElementById("resp");
+  resultado.value = "";
+  while (inicio <= final) {
+    r = inicio + tab;
+
+      resultado.value += `${inicio} + ${tab} = ${r}\n`
+      console.log(`${inicio} + ${tab} = ${r}`);
+
+    inicio = inicio + 1;
+  }
+}
+function ejercicio8(){
+  let resp="",tab="",ini="",fin="",r=0,msg=""
+  tab = document.getElementById("tabla").value
+  ini = document.getElementById("inicio").value
+  fin = document.getElementById("final").value
+  resp= document.getElementById("obs")
+  tab=parseInt(tab)
+  ini=parseInt(ini)
+  fin=parseInt(fin)
+  while (ini <= fin){
+    r = ini*tab
+
+    msg = msg + `${ini}*${tab}=${r}`+"\n"
+    ini=ini+1
+  }
+  resp.innerHTML=msg
+}
+function ejercicio9(){
+  let num1 = 0, num2 = 0;
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+  num1 = parseInt(num1);
+  num2 = parseInt(num2);
+  let resultado = document.getElementById("resp");
+  resultado.value = "";
+  if (num1 < num2){
+    for (let i = num1 + 1; i < num2; i++){
+      resultado.value += `${i} numero comprendido entre ${num1} y ${num2}\n`
+      console.log(i + " numero comprendido entre " + num1 + " y " + num2);
+    }
+  }
+  else{
+    resultado.value = "El primer numero debe ser menor que el segundo numero"
+  }
+}
+function ejercicio10(){
+  let num1 = 0, num2 = 0;
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+  num1 = parseInt(num1);
+  num2 = parseInt(num2);
+  let resultado = document.getElementById("resp");
+  resultado.value = "";
+  if (num1 < num2){
+    for (let i = num1 + 1; i < num2; i++){
+      if (i % 2 === 0){
+      resultado.value += `${i} numero par comprendido entre ${num1} y ${num2}\n`
+      console.log(i + " numero par comprendido entre " + num1 + " y " + num2);
+      }
+    }
+  }
+  else{
+    resultado.value = "El primer numero debe ser menor que el segundo numero"
+  }
+}
